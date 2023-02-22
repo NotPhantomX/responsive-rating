@@ -31,7 +31,7 @@ function RatingForm(props: {
   return (
     <form onSubmit={props.onSubmit}>
       <div class={styles['panel']}>
-        <img src={star} class={styles['star-icon']} />
+        <img src={star} class={styles['star-icon']} alt="star" />
         <h1 class={styles['title']}>How did we do?</h1>
         <p class={styles['description']}>
           Please let us know how we did with your support request. All feedback
@@ -62,7 +62,7 @@ function RatingForm(props: {
 function RatingSubmitted(props: { selectedRating: number }) {
   return (
     <div class={styles['thank-you-panel']}>
-      <img src={thankYouImg} />
+      <img src={thankYouImg} alt="ThankYou" />
 
       <p class={styles['selected-rating']}>
         You selected {props.selectedRating} out of 5
