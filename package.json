@@ -2,14 +2,18 @@
   "name": "responsive-rating-solid",
   "version": "0.0.0",
   "description": "",
+  "homepage": "https://notphantomx.github.io/responsive-rating",
   "scripts": {
     "start": "vite",
     "dev": "vite",
     "build": "vite build",
-    "serve": "vite preview"
+    "serve": "vite preview",
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d dist"
   },
   "license": "MIT",
   "devDependencies": {
+    "gh-pages": "^5.0.0",
     "typescript": "^4.9.5",
     "vite": "^4.1.4",
     "vite-plugin-solid": "^2.5.0"
