@@ -46,12 +46,17 @@ function RatingForm(props: {
                 selected={props.selectedRating === item}
                 onClick={() => props.handleRatingClicked(item)}
                 type="button"
+                aria-label={`Rating ${item}`}
               />
             )}
           </For>
         </div>
 
-        <button class={styles['submit-button']} type="submit">
+        <button
+          class={styles['submit-button']}
+          type="submit"
+          aria-label="submit rating"
+        >
           Submit
         </button>
       </div>
