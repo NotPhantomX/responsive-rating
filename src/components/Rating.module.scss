@@ -1,0 +1,142 @@
+@use "sass:map";
+
+$border-radius-root: 0.25rem;
+$orange: hsl(25, 97%, 53%);
+$white: hsl(0, 0%, 100%);
+$light-gray: hsl(217, 12%, 63%);
+$medium-gray: hsl(216, 12%, 54%);
+$dark-blue: hsl(213, 19%, 18%);
+$very-dark-blue: hsl(216, 12%, 8%);
+$rounded: (
+  0: 0,
+  "sm": calc($border-radius-root / 2),
+  null: $border-radius-root,
+  "lg": calc($border-radius-root * 2),
+  "xl": calc($border-radius-root * 6),
+  "pill": 9999px,
+  "circle": 50%,
+);
+
+$mobile-breakpoint: 520px;
+
+.panel {
+  border-radius: map.get($rounded, "xl");
+  padding: 40px;
+  text-align: left;
+  width: 360px;
+  height: 360px;
+  // background-image: linear-gradient(to bottom, $dark-blue, $very-dark-blue);
+  background-image: radial-gradient(circle farthest-corner at top, $dark-blue, transparent);
+
+  transition: height 1s, width 1s ease-out;
+
+  @media screen and (max-width: $mobile-breakpoint) {
+    width: 240px;
+    padding: 20px;
+  }
+}
+
+.thank-you-panel {
+  border-radius: map.get($rounded, "xl");
+  padding: 40px;
+  text-align: center;
+  width: 360px;
+  height: 360px;
+  background-image: radial-gradient(circle farthest-corner at top, $dark-blue, transparent);
+
+  transition: height 1s, padding 1s ease-out;
+
+  @media screen and (max-width: $mobile-breakpoint) {
+    width: 240px;
+    padding: 20px;
+  }
+}
+
+.selected-rating {
+  color: $orange;
+  background-color: $dark-blue;
+  border-radius: map.get($rounded, "pill");
+  padding: 5px;
+  display: inline-block;
+  padding-left: 50px;
+  padding-right: 50px;
+  margin-top: 25px;
+  font-size: 15px;
+
+  transition: padding-right 1s, padding-left 1s ease-out;
+
+  @media screen and (max-width: $mobile-breakpoint) {
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+}
+
+.submit-button {
+  background-color: $orange;
+  color: $white;
+  text-transform: uppercase;
+  border-radius: map.get($rounded, "pill");
+  font-weight: bold;
+  width: 100%;
+  padding: 10;
+
+  &:focus {
+    background-color: $white;
+    color: $orange;
+  }
+}
+
+.rating-button {
+  background-color: $dark-blue;
+  color: $light-gray;
+  border-radius: map.get($rounded, "circle");
+  height: 50px;
+  width: 50px;
+
+  transition: height 1s, width 1s, font-size 1s ease-out;
+
+  @media screen and (max-width: $mobile-breakpoint) {
+    height: 35px;
+    width: 35px;
+    font-size: 12px;
+  }
+
+  &:hover {
+    background: $medium-gray;
+    color: $white;
+  }
+
+  &:focus {
+    color: $white;
+    background: $orange;
+  }
+
+  &.active {
+    color: $white;
+    background-color: $orange;
+  }
+}
+
+.rating-row {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 35px;
+}
+
+.star-icon {
+  background-color: $dark-blue;
+  border-radius: map.get($rounded, "circle");
+  padding: 15px;
+}
+
+.title {
+  font-size: 32px;
+  margin-bottom: 4px;
+  font-weight: 700;
+}
+
+.description {
+  color: $light-gray;
+  font-size: 15px;
+  font-weight: 400;
+}
