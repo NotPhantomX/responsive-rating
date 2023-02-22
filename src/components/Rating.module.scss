@@ -20,6 +20,7 @@ $rounded: (
 $mobile-breakpoint: 520px;
 
 .panel {
+  color: $white;
   border-radius: map.get($rounded, "xl");
   padding: 40px;
   text-align: left;
@@ -37,6 +38,7 @@ $mobile-breakpoint: 520px;
 }
 
 .thank-you-panel {
+  color: $white;
   border-radius: map.get($rounded, "xl");
   padding: 40px;
   text-align: center;
